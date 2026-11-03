@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Neutros cálidos */
+  --color-ink: #1b1815;
+  --color-ink-2: #262220;
+  --color-cream: #faf7f2;
+  --color-sand: #ece5da;
+  --color-line: #e6dccd;
+  --color-muted: #6b635a;
+  --color-subtle: #8a8278;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Marca: rgb(21 128 61), el green-700 de Tailwind v3 */
+  --color-brand: rgb(21 128 61);
+  --color-brand-light: #4ade80;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --font-sans: var(--font-hanken), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-blink: blink 1s step-end infinite;
+  --animate-floaty: floaty 6s ease-in-out infinite;
+  --animate-drift: drift 14s linear infinite;
+
+  @keyframes blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes floaty {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes drift {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 28px 28px;
+    }
   }
 }
 
+/*
+ * Transiciones de hover. En Tailwind v4, -translate-y-* usa la propiedad
+ * `translate` (no `transform`), así que debe estar en la lista.
+ */
+@utility card-hover {
+  transition:
+    translate 0.4s var(--ease-out-expo),
+    box-shadow 0.4s var(--ease-out-expo),
+    border-color 0.4s ease;
+}
+
+@utility pill-hover {
+  transition:
+    translate 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+@utility btn-hover {
+  transition:
+    translate 0.25s ease,
+    box-shadow 0.3s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+/* Retícula de puntos del hero y del contacto */
+.dot-grid {
+  background-image: radial-gradient(rgb(250 247 242 / 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Aparición al hacer scroll (la activa <Reveal />) */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s var(--ease-out-expo),
+    transform 0.8s var(--ease-out-expo);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+  }
 }
