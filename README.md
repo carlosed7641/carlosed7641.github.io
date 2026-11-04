@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio · Carlos Castro Reales
 
-## Getting Started
+Mi portfolio personal: Software Engineer especializado en frontend, enfocado en soluciones con IA (RAG y orquestación de agentes).
 
-First, run the development server:
+Es una sola página estática con hero, logros, sobre mí, proyectos, experiencia, stack y contacto.
+
+## Stack
+
+- **Next.js 16** (App Router), generado 100% estático
+- **TypeScript**
+- **Tailwind CSS v4**, con los colores, fuentes y animaciones definidos como tokens en `globals.css`
+- **Hanken Grotesk** y **JetBrains Mono**, cargadas con `next/font`
+
+## Desarrollo
+
+Requiere Node.js 20.9 o superior.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # build de producción
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+  app/
+    page.tsx        Página principal con todas las secciones
+    layout.tsx      Fuentes y metadatos (SEO y Open Graph)
+    globals.css     Tokens de diseño, animaciones y utilidades de hover
+    icon.svg        Favicon
+    apple-icon.tsx  Ícono de inicio en iOS, generado en el build
+  components/
+    Nav.tsx         Barra de navegación que cambia de estilo al hacer scroll
+    CodeWindow.tsx  Ventana de código con efecto de escritura del hero
+    Reveal.tsx      Animación de aparición al hacer scroll
+    ui.tsx          Botones, enlaces y títulos reutilizables
+  data/
+    content.ts      Todo el contenido del sitio
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Para actualizar textos, proyectos o experiencia solo hay que editar `src/data/content.ts`.
