@@ -141,12 +141,14 @@ export default function Home() {
               </div>
               <dl className="flex flex-col justify-center divide-y divide-cream/10 border-t border-cream/10 bg-ink-2 px-8 md:border-t-0 md:border-l md:px-12">
                 {featuredProject.metrics.map((m) => (
-                  <div key={m.label} className="flex items-baseline gap-4 py-7">
-                    <dt className="sr-only">{m.label}</dt>
+                  <div
+                    key={m.label}
+                    className="flex flex-row-reverse items-baseline justify-end gap-4 py-7"
+                  >
+                    <dt className="text-[14px] text-cream/55">{m.label}</dt>
                     <dd className="shrink-0 text-[46px] leading-none font-extrabold tracking-[-0.03em] whitespace-nowrap text-brand-light">
                       {m.value}
                     </dd>
-                    <dd className="text-[14px] text-cream/55">{m.label}</dd>
                   </div>
                 ))}
               </dl>

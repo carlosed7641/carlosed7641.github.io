@@ -54,10 +54,6 @@
   }
 }
 
-/*
- * Transiciones de hover. En Tailwind v4, -translate-y-* usa la propiedad
- * `translate` (no `transform`), así que debe estar en la lista.
- */
 @utility card-hover {
   transition:
     translate 0.4s var(--ease-out-expo),

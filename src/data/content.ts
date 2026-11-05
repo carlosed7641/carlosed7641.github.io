@@ -113,7 +113,8 @@ export const experience = [
       "Participé en el rediseño de los portales de Caracol Televisión, Blu Radio y La Kalle, modernizando la interfaz y la experiencia de usuario.",
       "Desarrollé módulos clave como el de señales en vivo y la página de episodios, integrando Mediastream y YouTube.",
       "Implementé lazy loading por secciones en los portales, mejorando el rendimiento y los tiempos de carga.",
-      "Desarrollé experiencias interactivas para Gol Caracol, como la landing de sorteos en vivo y el simulador del Mundial 2026, y contribuí a la landing de resultados electorales en tiempo real.",    ],
+      "Desarrollé experiencias interactivas para Gol Caracol, como la landing de sorteos en vivo y el simulador del Mundial 2026, y contribuí a la landing de resultados electorales en tiempo real.",    
+    ],
   },
   {
     period: "feb 2023 — oct 2023",
