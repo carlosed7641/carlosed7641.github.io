@@ -23,7 +23,7 @@ export const signals = [
   },
   {
     tag: "reusable.ui",
-    title: "Componentes reutilizables",
+    title: "UI reutilizable",
     text: "Componentes y módulos escalables que comparten varios portales y tiendas.",
   },
   {
