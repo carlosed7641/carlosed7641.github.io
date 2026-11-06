@@ -4,7 +4,7 @@ export const profile = {
   role: "Software Engineer · AI",
   email: "carlosed7641@gmail.com",
   github: "https://github.com/carlosed7641",
-  linkedin: "https://www.linkedin.com/in/carlos-castro-reales-53448b213",
+  linkedin: "https://www.linkedin.com/in/carlos-castro-reales",
   // Pendiente: poner el PDF en public/ y cambiar a "/cv-carlos-castro-reales.pdf"
   cv: "#contacto",
 };
