@@ -4,7 +4,7 @@ export const profile = {
   role: "Software Engineer · AI",
   email: "carlosed7641@gmail.com",
   github: "https://github.com/carlosed7641",
-  linkedin: "https://www.linkedin.com/in/carlos-castro-reales-53448b213",
+  linkedin: "https://www.linkedin.com/in/carlos-castro-reales",
   // Pendiente: poner el PDF en public/ y cambiar a "/cv-carlos-castro-reales.pdf"
   cv: "#contacto",
 };
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     title: "RagTech",
     text: "MVP de e-commerce construido para probar un asistente de compras con IA: Claude elige entre búsqueda semántica y filtros tipados con Zod, sin escribir SQL.",
     repo: "https://github.com/carlosed7641/rag-ecommerce",
-    demo: "https://rag-ecommerce-gilt.vercel.app",
+    demo: "https://rag-ecommerce-ai.vercel.app",
   },
   {
     meta: "Claude Code · Subagentes",
@@ -99,7 +99,7 @@ export const projects: Project[] = [
     title: "Life Dashboard",
     text: "Panel único con calendario, correos, tareas y notas conectado a Google, con resumen diario y chat asistente.",
     repo: "https://github.com/carlosed7641/life-dashboard",
-    demo: "https://life-dashboard-gamma-khaki.vercel.app",
+    demo: "https://life-dashboard-chat.vercel.app",
   },
 ];
 
