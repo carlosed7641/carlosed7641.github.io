@@ -52,7 +52,7 @@ export function Nav() {
             ))}
           </ul>
           <a
-            href="#contacto"
+            href={`mailto:${profile.email}`}
             className={`rounded-full border px-4 py-2 text-[14px] font-semibold transition-colors ${
               scrolled
                 ? "border-ink hover:bg-ink hover:text-cream"
