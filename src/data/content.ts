@@ -79,8 +79,8 @@ export const projects: Project[] = [
     meta: "RAG · Tool calling · pgvector",
     title: "RagTech",
     text: "MVP de e-commerce construido para probar un asistente de compras con IA: Claude elige entre búsqueda semántica y filtros tipados con Zod, sin escribir SQL.",
-    repo: "https://github.com/carlosed7641/rag-ecommerce",
-    demo: "https://rag-ecommerce-ai.vercel.app",
+    repo: "https://github.com/carlosed7641/rag-tech",
+    demo: "https://rag-tech-ai.vercel.app",
   },
   {
     meta: "Claude Code · Subagentes",
