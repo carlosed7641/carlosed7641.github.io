@@ -80,7 +80,7 @@ export const projects: Project[] = [
     title: "RagTech",
     text: "MVP de e-commerce construido para probar un asistente de compras con IA: Claude elige entre búsqueda semántica y filtros tipados con Zod, sin escribir SQL.",
     repo: "https://github.com/carlosed7641/rag-tech",
-    demo: "https://rag-tech-ai.vercel.app",
+    demo: "https://rag-tech.vercel.app",
   },
   {
     meta: "Claude Code · Subagentes",
