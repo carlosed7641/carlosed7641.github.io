@@ -37,6 +37,10 @@ const lineStarts = lineLengths.map((_, i) =>
 );
 const totalChars = lineStarts[lines.length - 1] + lineLengths[lines.length - 1];
 
+// Sangría colgante: si una línea no cabe y salta, la continuación queda 2
+// columnas más adentro que el inicio del código (como en un editor).
+const lineIndents = lines.map((line) => (line[0]?.text.match(/^ */)?.[0].length ?? 0) + 2);
+
 export function CodeWindow() {
   const [typed, setTyped] = useState(0);
   const done = typed >= totalChars;
@@ -66,7 +70,7 @@ export function CodeWindow() {
 
       <pre
         aria-hidden="true"
-        className="min-h-[310px] overflow-x-auto px-5 py-6 font-mono text-[12px] leading-[1.9] text-cream/90 sm:px-6 sm:text-[13.5px]"
+        className="min-h-[310px] px-5 py-6 font-mono text-[12px] leading-[1.9] break-words whitespace-pre-wrap text-cream/90 sm:px-6 sm:text-[13.5px]"
       >
         {lines.map((line, i) => {
           const visible = Math.min(Math.max(typed - lineStarts[i], 0), lineLengths[i]);
@@ -77,7 +81,10 @@ export function CodeWindow() {
 
           let offset = 0;
           return (
-            <div key={i}>
+            <div
+              key={i}
+              style={{ paddingLeft: `${lineIndents[i]}ch`, textIndent: `-${lineIndents[i]}ch` }}
+            >
               {line.map((t, j) => {
                 const part = t.text.slice(0, Math.max(visible - offset, 0));
                 offset += t.text.length;

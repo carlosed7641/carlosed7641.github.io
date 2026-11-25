@@ -106,6 +106,14 @@ body {
   transform: none;
 }
 
+/* El escalonado solo tiene sentido cuando las tarjetas están en fila. En mobile
+   van apiladas y cada una entra sola: el retraso solo se siente como lag. */
+@media (min-width: 768px) {
+  .reveal {
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

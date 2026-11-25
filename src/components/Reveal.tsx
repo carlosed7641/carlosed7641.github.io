@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
@@ -23,8 +23,10 @@ export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
           observer.disconnect();
         }
       },
-      // Se activa justo antes de que el bloque entre en pantalla.
-      { threshold: 0, rootMargin: "0px 0px 5% 0px" },
+      // Se activa cuando el bloque ya asoma ~10% dentro de la pantalla, para que
+      // la animación completa se vea (si arranca fuera de pantalla, en mobile
+      // solo se alcanza a ver el final y parece un "salto").
+      { threshold: 0, rootMargin: "0px 0px -10% 0px" },
     );
 
     observer.observe(el);
@@ -35,7 +37,7 @@ export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
     <div
       ref={ref}
       className={`reveal ${className}`}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+      style={delay ? ({ "--reveal-delay": `${delay}ms` } as CSSProperties) : undefined}
     >
       {children}
     </div>

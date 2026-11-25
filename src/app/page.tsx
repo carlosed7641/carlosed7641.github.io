@@ -22,7 +22,7 @@ export default function Home() {
           <div aria-hidden="true" className="dot-grid absolute inset-0 animate-drift" />
           <div
             aria-hidden="true"
-            className="absolute -top-40 -right-40 size-[620px] rounded-full bg-brand/25 blur-[140px]"
+            className="pointer-events-none absolute -top-40 -right-40 size-[620px] rounded-full bg-[radial-gradient(circle,rgb(21_128_61/0.3),transparent_68%)] blur-[20px]"
           />
 
           <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-6 pt-32 pb-24 md:grid-cols-[1.1fr_1fr] md:pt-36 md:pb-32">
@@ -236,7 +236,7 @@ export default function Home() {
           <div aria-hidden="true" className="dot-grid absolute inset-0" />
           <div
             aria-hidden="true"
-            className="absolute -bottom-48 -left-40 size-[560px] rounded-full bg-brand/25 blur-[140px]"
+            className="pointer-events-none absolute -bottom-48 -left-40 size-[560px] rounded-full bg-[radial-gradient(circle,rgb(21_128_61/0.3),transparent_68%)] blur-[20px]"
           />
           <Reveal className="relative mx-auto max-w-3xl px-6 py-32 text-center">
             <Eyebrow dark>Contacto</Eyebrow>

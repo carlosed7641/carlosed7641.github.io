@@ -38,6 +38,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="es"
       className={`${hanken.variable} ${jetbrains.variable} antialiased`}
     >
+      <head>
+        {/* Si el JS no corre, el contenido de <Reveal> no debe quedar oculto. */}
+        <noscript>
+          <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+      </head>
       <body className="min-h-screen font-sans">{children}</body>
     </html>
   );
